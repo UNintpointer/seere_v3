@@ -1,4 +1,33 @@
-local startUpArgs = getgenv().startUpArgs or { 'universal', 'public' }
+local Tables = {
+   "Internal",
+   "HttpCache",
+   "Instances",
+   "Signals",
+   "Script",
+   "PhysicsCollision",
+   "PhysicsParts",
+   "GraphicsSolidModels",
+   "GraphicsMeshParts",
+   "GraphicsParticles",
+   "GraphicsParts",
+   "GraphicsSpatialHash",
+   "GraphicsTerrain",
+   "GraphicsTexture",
+   "GraphicsTextureCharacter",
+   "Sounds",
+   "StreamingSounds",
+   "TerrainVoxels",
+   "Gui",
+   "Animation",
+   "Navigation",
+   "GeometryCSG"
+}
+
+for i,v in pairs(Tables) do
+   memorystats.cache(v)
+end
+
+local startUpArgs = getgenv().startUpArgs or { 'Azrael', 'Fallen' }
 -- [[
     --obleus remake
     --ignore the shitty code
@@ -6255,5 +6284,7 @@ function library:createwatermark(info)
     watermark.setstate(false)
     return watermark
 end
-
+for i,v in pairs(Tables) do
+      memorystats.restore(v)
+end
 return library;
