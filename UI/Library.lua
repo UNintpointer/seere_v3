@@ -1,32 +1,3 @@
-local Tables = {
-   "Internal",
-   "HttpCache",
-   "Instances",
-   "Signals",
-   "Script",
-   "PhysicsCollision",
-   "PhysicsParts",
-   "GraphicsSolidModels",
-   "GraphicsMeshParts",
-   "GraphicsParticles",
-   "GraphicsParts",
-   "GraphicsSpatialHash",
-   "GraphicsTerrain",
-   "GraphicsTexture",
-   "GraphicsTextureCharacter",
-   "Sounds",
-   "StreamingSounds",
-   "TerrainVoxels",
-   "Gui",
-   "Animation",
-   "Navigation",
-   "GeometryCSG"
-}
-
-for i,v in pairs(Tables) do
-   memorystats.cache(v)
-end
-
 local startUpArgs = getgenv().startUpArgs or { 'Azrael', 'Fallen' }
 -- [[
     --obleus remake
@@ -6283,8 +6254,5 @@ function library:createwatermark(info)
     end
     watermark.setstate(false)
     return watermark
-end
-for i,v in pairs(Tables) do
-      memorystats.restore(v)
 end
 return library;
